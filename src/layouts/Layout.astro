@@ -48,7 +48,7 @@ if (!meta_image) meta_image = "/meta.jpg";
   </head>
   <body>
     <GeneralNav />
-    <main class="my-[10vh]">
+    <main class="my-[11vh]">
       <slot />
     </main>
     <GeneralFooter />
@@ -66,12 +66,15 @@ if (!meta_image) meta_image = "/meta.jpg";
     color: #ffffff;
   }
   footer a {
-    color: #5a5a5a;
+    color: #6a6a6a;
     font-weight: 400;
     font-size: 0.875rem;
+    transition: all 0.1s ease-in-out;
   }
   footer a:hover {
     color: #ffffff;
+    text-decoration: underline;
+    text-decoration-style: dashed;
   }
 
   p {
@@ -85,12 +88,25 @@ if (!meta_image) meta_image = "/meta.jpg";
     color: #000000;
     font-size: 0.8rem;
     border: none;
-    padding: 0.75rem 1.75rem;
+    padding: 0.9rem 2rem;
     border-radius: 0.5rem;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
   }
 
   button:hover {
     opacity: 0.8;
+  }
+
+  .hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hidden-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hidden-scrollbar {
+    -webkit-overflow-scrolling: touch;
   }
 </style>

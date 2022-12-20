@@ -1,26 +1,28 @@
 ---
+import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
+<script src="//unpkg.com/alpinejs" defer is:inline></script>
 <Layout>
-  <section class="h-screen lg:h-[75vh] container mx-auto border-b border-b-neutral-900 grid grid-cols-1 lg:grid-cols-2 gap-6 2xl:gap-10 px-4 lg:px-8">
-    <div class="flex flex-col gap-4 lg:gap-6 self-center px-2">
-      <h1 class="w-3/4 lg:w-full leading-snug lg:leading-tight text-5xl lg:text-7xl font-bold">The way to own your library.</h1>
-      <p class="font-light opacity-50">
-        Reda allows you to import, organise, share and read your books, articles, and other digital documents anytime, anywhere.
-      </p>
-      <div class="w-max relative">
-        <button>Become an early tester</button>
-        <div class="w-full absolute top-[120%] text-xs bg-neutral-900 bg-opacity-50 backdrop-blur-lg drop-shadow-md rounded-md">
-          <a href="" class="block px-3.5 py-3">iPhone/iPad</a>
-          <hr class="opacity-10" />
-          <a href="" class="block px-3.5 py-3">Android</a>
-        </div>
-      </div>
-    </div>
+  <HeroSection />
 
-    <div class="w-full self-end">
-      <img src="/mockup_one.png" class="w-full xl:w-3/4 mt-auto mx-auto" />
+  <section class="container flex flex-col gap-6 max-w-5xl 2xl:max-w-7xl mx-auto py-5 px-3">
+    <h2 class="text-3xl text-neutral-200 font-bold px-1">Brief context ✨</h2>
+
+    <div class="max-h-[80vh] bg-neutral-900 bg-opacity-70 rounded-lg px-6 py-5 lg:py-10 lg:px-12 overflow-scroll hidden-scrollbar">
+      <p class="font-light leading-loose opacity-75">
+        It’s 2022, but Tom still opens and reads PDFs like it’s 2010; stored in different folders (docs, school, downloads etc... gosh! how does Tom
+        survive?), looks through his file manager or that other app we won’t mention every-time to find a file “conveniently” named
+        “writing_interpreters (1).pdf”. That’s where Reda (pronounced as Reader; easy) comes in, still don’t understand? I don’t either, so let’s go
+        back a bit more. Remember those days when you would download movies from the web or get it from a friend (probably because you couldn’t find
+        it on the streaming platform you pay for; or that other reason you know), and you would have to battle with a video player to get it to show
+        up with a terrible thumbnail, you’d play it and then it’d hit you “$hit, I need the subtitle!” and then you try to find one that matches your
+        version for minutes and when you think you have, you have to import it into that video player and then you would have to tinker with the
+        settings and slow it down a bit for a manageable experience... and then came along Infuse; download, import it into Infuse any of the many
+        ways you can and then you’d open the app to find a streaming app’s library-like experience; the right thumbnail, cast details, movie ‘plot’,
+        subtitles, ratings etc! Now that you get the picture, Reda simply brings a similar experience to your digital books!
+      </p>
     </div>
   </section>
 </Layout>
