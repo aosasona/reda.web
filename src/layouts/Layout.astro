@@ -1,35 +1,96 @@
 ---
+import GeneralFooter from "../components/GeneralFooter.astro";
+import GeneralNav from "../components/GeneralNav.astro";
+
 export interface Props {
-	title: string;
+  title?: string;
+  description?: string;
+  meta_image?: string;
 }
 
-const { title } = Astro.props;
+let { title, description, meta_image } = Astro.props;
+
+if (!title) title = "Reda — The Way To Own Your Library";
+if (!description) description = "Import, share, organise and read your favourite books, articles and documents anytime with Reda.";
+if (!meta_image) meta_image = "/meta.jpg";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://usereda.app" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={meta_image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://usereda.app" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={meta_image} />
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <GeneralNav />
+    <main class="my-[10vh]">
+      <slot />
+    </main>
+    <GeneralFooter />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Outfit", "Inter", Arial, Helvetica, system-ui, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+  }
+  footer a {
+    color: #5a5a5a;
+    font-weight: 400;
+    font-size: 0.875rem;
+  }
+  footer a:hover {
+    color: #ffffff;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
+
+  button {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 0.8rem;
+    border: none;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
 </style>
