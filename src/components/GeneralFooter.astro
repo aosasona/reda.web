@@ -2,7 +2,7 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-neutral-900 bg-opacity-50 px-8 lg:px-12 py-12 lg:py-16 mt-14">
+<footer class="bg-neutral-900 bg-opacity-50 px-8 lg:px-12 py-14 lg:py-18 mt-14">
   <div class="max-w-5xl 2xl:max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
     <div class="col-span-2 lg:col-span-1 mb-6 lg:mb-0">
       <img src="/logo_white.svg" class="h-5 lg:h-6" />
@@ -10,17 +10,18 @@ const year = new Date().getFullYear();
     <div>
       <h3 class="font-semibold">Legal</h3>
       <div class="flex flex-col gap-2 mt-3">
-        <a href="" class="block">Privacy policy</a>
-        <a href="" class="block">Terms of service</a>
+        <a href="/privacy" class="block">Privacy policy</a>
+        <a href="/terms" class="block">Terms of service</a>
       </div>
     </div>
 
     <div>
       <h3 class="font-semibold">Product</h3>
       <div class="flex flex-col gap-2 mt-3">
-        <a href="" class="block">Pricing</a>
-        <a href="" class="block">Blog</a>
-        <a href="" class="block">FAQs</a>
+        <a href="/release-notes" class="block">Release notes</a>
+        <a href="/pricing" class="block">Pricing</a>
+        <a href="/blog" class="block">Blog</a>
+        <a href="/faqs" class="block">FAQs</a>
       </div>
     </div>
 
@@ -34,9 +35,14 @@ const year = new Date().getFullYear();
     </div>
 
     <hr class="col-span-full opacity-10 mt-4" />
-    <div class="col-span-full flex flex-col lg:flex-row lg:justify-between gap-2">
+    <div class="col-span-full flex flex-col lg:flex-row lg:justify-between gap-3 py-1">
       <p class="text-sm font-light">
-        Built by <a class="text-blue-500 underline decoration-dashed" href="https://twitter.com/trulyao" target="_blank" rel="noreferrer">Ayodeji</a>
+        Built by <a
+          class="text-blue-600 font-light underline decoration-dashed underline-offset-4"
+          href="https://twitter.com/trulyao"
+          target="_blank"
+          rel="noreferrer">Ayodeji</a
+        >
       </p>
       <p class="text-sm font-light opacity-50">&copy; {year} Reda. All Rights Reserved.</p>
     </div>

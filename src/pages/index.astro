@@ -1,4 +1,5 @@
 ---
+import FeatureCard from "../components/FeatureCard.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -7,10 +8,15 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <HeroSection />
 
-  <section class="container flex flex-col gap-6 max-w-5xl 2xl:max-w-7xl mx-auto py-5 px-3">
-    <h2 class="text-3xl text-neutral-200 font-bold px-1">Brief context ✨</h2>
+  <section class="container flex flex-col gap-6 max-w-5xl 2xl:max-w-7xl mx-auto py-5 px-4" x-data="{ showStory: false }">
+    <button
+      x-on:click="showStory = !showStory"
+      class="bg-transparent text-blue-600 underline underline-offset-4 decoration-dashed hover:opacity-50 my-2 p-0"
+    >
+      Interested in a short story?
+    </button>
 
-    <div class="max-h-[80vh] bg-neutral-900 bg-opacity-70 rounded-lg px-6 py-5 lg:py-10 lg:px-12 overflow-scroll hidden-scrollbar">
+    <div class="max-h-[85vh] bg-neutral-900 bg-opacity-50 rounded-lg p-6 lg:py-10 lg:px-12 overflow-scroll hidden-scrollbar" x-show="showStory">
       <p class="font-light leading-loose opacity-75">
         It’s 2022, but Tom still opens and reads PDFs like it’s 2010; stored in different folders (docs, school, downloads etc... gosh! how does Tom
         survive?), looks through his file manager or that other app we won’t mention every-time to find a file “conveniently” named
@@ -21,8 +27,55 @@ import Layout from "../layouts/Layout.astro";
         version for minutes and when you think you have, you have to import it into that video player and then you would have to tinker with the
         settings and slow it down a bit for a manageable experience... and then came along Infuse; download, import it into Infuse any of the many
         ways you can and then you’d open the app to find a streaming app’s library-like experience; the right thumbnail, cast details, movie ‘plot’,
-        subtitles, ratings etc! Now that you get the picture, Reda simply brings a similar experience to your digital books!
+        subtitles, ratings etc! Now that you get the picture, Reda simply brings a similar experience to your digital documents!
       </p>
     </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <FeatureCard title="Easy organisation" icon="🗄️">
+        Organise your books and documents in a way that makes sense to you. Create custom collections, and organise your documents into them.
+      </FeatureCard>
+
+      <FeatureCard title="Import from multiple sources" icon="🔌">
+        Import from your local file system, web URLs or even connect with your cloud storage provider to import your documents.
+      </FeatureCard>
+
+      <FeatureCard title="Secure by default" icon="🔐">
+        Your books and documents are stored locally on your device, and are never sent to any server unless you choose to. You can also choose to
+        encrypt your library with a password or use biometrics authentication to keep your data safe.
+      </FeatureCard>
+
+      <FeatureCard title="Read later" icon="📋">
+        Save any article or web page to read later. Reda will automatically extract the article's content and save it to your library.
+      </FeatureCard>
+
+      <FeatureCard title="Track progress" icon="📖">
+        Pick up right where you left off the next time you open a document or book. Reda will remember your progress and will take you to the right
+        page.
+      </FeatureCard>
+
+      <FeatureCard title="Share your library" icon="🔗">
+        Share your library with your friends and family, and let them read your books and documents with ease. Generate one-time protected links to
+        share any document in your library with anyone you want while keeping your data safe.
+      </FeatureCard>
+
+      <FeatureCard title="Read anywhere" icon="📱">
+        Read your books and documents on your phone, tablet, laptop or desktop. Reda is available on all platforms* and will sync your library across
+        all your devices so you can pick up right where you left off.
+      </FeatureCard>
+
+      <FeatureCard title="Version control" icon="📦">
+        You can effortlessly add new versions of your documents while still keeping the older versions you can easily go back to at any moment. Stay
+        organized and never lose track of your document's changes with Reda.
+      </FeatureCard>
+
+      <FeatureCard title="Quick search" icon="🔍">
+        Find any document in your library in a matter of seconds. Reda will search through your library and show you the results as you type.
+      </FeatureCard>
+    </div>
+
+    <p class="bg-red-600 bg-opacity-20 text-center text-xs md:text-sm font-normal text-red-600 rounded-lg px-3 py-4">
+      **Reda is currently in beta and most of these features may not be available at the moment and may change in the future.
+    </p>
   </section>
 </Layout>

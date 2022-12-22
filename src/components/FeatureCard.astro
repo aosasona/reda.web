@@ -1,0 +1,18 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+}
+
+const { icon, title } = Astro.props;
+---
+
+<div
+  class="bg-neutral-900 hover:ring-2 hover:ring-blue-600 flex flex-col gap-3 items-center sm:items-start text-center sm:text-left py-10 lg:py-8 px-8 bg-opacity-50 rounded-xl transition-all cursor-pointer"
+>
+  <div class="w-max bg-neutral-900 bg-opacity-70 backdrop-blur-lg text-3xl text-center rounded-full aspect-square p-4">{icon}</div>
+  <h3 class="text-xl font-bold">{title}</h3>
+  <p class="text-sm lg:text-base text-neutral-500 leading-loose lg:leading-loose">
+    <slot />
+  </p>
+</div>
