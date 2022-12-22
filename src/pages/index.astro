@@ -8,7 +8,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <HeroSection />
 
-  <section class="container flex flex-col gap-6 max-w-5xl 2xl:max-w-7xl mx-auto py-5 px-4" x-data="{ showStory: false }">
+  <section class="container max-w-5xl 2xl:max-w-7xl mx-auto flex flex-col gap-6 py-5 px-4" x-data="{ showStory: false }">
     <button
       x-on:click="showStory = !showStory"
       class="bg-transparent text-blue-600 underline underline-offset-4 decoration-dashed hover:opacity-50 my-2 p-0"
