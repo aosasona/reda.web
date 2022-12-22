@@ -3,13 +3,18 @@ import Layout from "../../layouts/Layout.astro";
 
 const releases = await Astro.glob("./notes/*.md");
 
-const sortedReleases = releases.sort((a, b) => Number(a?.frontmatter?.meta) - Number(b?.frontmatter?.meta));
+const sortedReleases = releases.sort(
+	(a, b) => Number(a?.frontmatter?.meta) - Number(b?.frontmatter?.meta)
+);
 ---
 
-<Layout>
+<Layout title="Release notes">
 	<section>
 		<h1 class="text-3xl lg:text-4xl font-bold">📝 Release Notes</h1>
-		<p class="text-neutral-500 mt-3">Here you can find the release notes for all version of Reda. The release notes are ordered by version number, newest first.</p>
+		<p class="text-neutral-500 mt-3">
+			Here you can find the release notes for all version of Reda. The release
+			notes are ordered by version number, newest first.
+		</p>
 		<div class="grid grid-cols-1 gap-6 mt-6">
 			{
 				sortedReleases.map((release) => (

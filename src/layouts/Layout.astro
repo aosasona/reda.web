@@ -4,126 +4,133 @@ import GeneralNav from "../components/GeneralNav.astro";
 import SubscriptionArea from "../components/SubscriptionArea.astro";
 
 export interface Props {
-  title?: string;
-  description?: string;
-  meta_image?: string;
+	title?: string;
+	description?: string;
+	meta_image?: string;
 }
 
 let { title, description, meta_image } = Astro.props;
 
-if (!title) title = "Reda — The Way To Own Your Library";
+if (!title) title = "Reda — The way to own your library";
 if (!description) description = "Import, share, organise and read your favourite books, articles and documents anytime with Reda.";
 if (!meta_image) meta_image = "/meta.jpg";
+
+meta_image = `https://usereda.app${meta_image}`;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
 
-    <!-- Primary Meta Tags -->
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
+		<!-- Primary Meta Tags -->
+		<meta name="title" content={title} />
+		<meta name="color-scheme" content="dark" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="description" content={description} />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://usereda.app" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={meta_image} />
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://usereda.app" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={meta_image} />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://usereda.app" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={meta_image} />
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://usereda.app" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={meta_image} />
+		<meta http-equiv="content-language" content="en" />
+		<meta name="Cache-Control" content="no-cache" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <title>{title}</title>
-  </head>
-  <body class="antialiased">
-    <GeneralNav />
-    <main class="mt-[11vh] mb-6">
-      <slot />
-      <SubscriptionArea />
-    </main>
-    <GeneralFooter />
-  </body>
+		<title>{title}</title>
+	</head>
+	<body class="antialiased">
+		<GeneralNav />
+		<main class="mt-[12vh] mb-6">
+			<slot />
+			<SubscriptionArea />
+		</main>
+		<GeneralFooter />
+	</body>
 </html>
 <style is:global>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  html {
-    font-family: "Outfit", "Inter", Arial, Helvetica, system-ui, sans-serif;
-    background-color: #000000;
-    color: #ffffff;
-  }
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	html {
+		font-family: "Outfit", "Inter", Arial, Helvetica, system-ui, sans-serif;
+		background-color: #000000;
+		color: #ffffff;
+	}
 
-  section {
-    padding: 0 1rem;
-    max-width: 1024px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-  }
+	section {
+		padding: 0 1rem;
+		max-width: 1024px;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+	}
 
-  @media (min-width: 1536px) {
-    section {
-      max-width: 1280px !important;
-      padding: 0rem;
-    }
-  }
+	@media (min-width: 1536px) {
+		section {
+			max-width: 1280px !important;
+			padding: 0rem;
+		}
+	}
 
-  footer a {
-    color: #6a6a6a;
-    font-weight: 400;
-    font-size: 0.875rem;
-    transition: all 0.1s ease-in-out;
-  }
-  footer a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-    text-decoration-style: dashed;
-  }
+	footer a {
+		color: #6a6a6a;
+		font-weight: 400;
+		font-size: 0.875rem;
+		transition: all 0.1s ease-in-out;
+	}
+	footer a:hover {
+		color: #ffffff;
+		text-decoration: underline;
+		text-decoration-style: dashed;
+	}
 
-  p {
-    font-size: 1rem;
-    line-height: 1.6rem;
-    font-weight: 400;
-  }
+	p {
+		font-size: 1rem;
+		line-height: 1.6rem;
+		font-weight: 400;
+	}
 
-  button {
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 0.8rem;
-    border: none;
-    padding: 0.9rem 2rem;
-    border-radius: 0.5rem;
-    transition: all 0.15s ease-in-out;
-  }
+	button {
+		background-color: #ffffff;
+		color: #000000;
+		font-size: 0.8rem;
+		border: none;
+		padding: 0.9rem 2rem;
+		border-radius: 0.5rem;
+		transition: all 0.15s ease-in-out;
+	}
 
-  button:hover {
-    opacity: 0.8;
-  }
+	button:hover {
+		opacity: 0.8;
+	}
 
-  .hidden-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+	.hidden-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
 
-  .hidden-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+	.hidden-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
 
-  .hidden-scrollbar {
-    -webkit-overflow-scrolling: touch;
-  }
+	.hidden-scrollbar {
+		-webkit-overflow-scrolling: touch;
+	}
 </style>
