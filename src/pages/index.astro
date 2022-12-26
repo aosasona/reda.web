@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
 	<HeroSection />
 
 	<section class="container max-w-5xl 2xl:max-w-7xl mx-auto flex flex-col gap-6 py-5 px-4 lg:px-0" x-data="{ showStory: false }">
-		<button x-on:click="showStory = !showStory" class="bg-transparent text-blue-600 underline underline-offset-4 decoration-dashed hover:opacity-50 my-2 p-0"> Interested in a short story?</button>
+		<button x-on:click="showStory = !showStory" class="w-max mx-auto bg-transparent text-blue-600 underline underline-offset-4 decoration-dashed hover:opacity-50 mb-4 p-0"> Interested in a short story?</button>
 
 		<div class="max-h-[85vh] bg-neutral-900 bg-opacity-50 rounded-lg p-6 lg:py-10 lg:px-12 overflow-scroll hidden-scrollbar" x-show="showStory">
 			<p class="font-light leading-loose opacity-75">
@@ -22,7 +22,7 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-			<FeatureCard title="Easy organisation" icon="🗄️">Organise your books and documents in a way that makes sense to you. Create custom collections, and organise your documents into them.</FeatureCard>
+			<FeatureCard title="Easy organisation" icon="🗄️">Organise your books and documents in a way that makes sense to you. Create custom collections, and organise your documents into them. You can also create bookmarks to keep track of important sections of your documents.</FeatureCard>
 
 			<FeatureCard title="Import from multiple sources" icon="🔌">Import from your local file system, web URLs or even connect with your cloud storage provider to import your documents.</FeatureCard>
 

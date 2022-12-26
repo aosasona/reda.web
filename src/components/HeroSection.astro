@@ -10,12 +10,12 @@ import { DiApple, DiAndroid } from "react-icons/di/index.js";
 			<div class="w-max relative" x-data="{ showDownload: false }">
 				<button x-on:click="showDownload = !showDownload">Try it out now (beta)</button>
 				<div class="w-full absolute top-[125%] bg-neutral-900 bg-opacity-50 backdrop-blur-lg rounded-md z-[99]" x-show="showDownload">
-					<a href="" class="w-full hover:opacity-50 flex items-center gap-2 px-3.5 py-3" target="_blank" rel="noopener noreferrer">
+					<a href="https://testflight.apple.com/join/ObUyBzN2" class="w-full hover:opacity-50 flex items-center gap-2 px-3.5 py-3" target="_blank" rel="noopener noreferrer">
 						<DiApple size={18} />
-						<p class="text-sm">iPhone/iPad</p>
+						<p class="text-sm">iPhone (iOS)</p>
 					</a>
 					<hr class="opacity-10" />
-					<a href="" class="w-full hover:opacity-50 flex items-center gap-2 px-3.5 py-3">
+					<a href="https://play.google.com/store/apps/details?id=com.wytehq.reda" class="w-full hover:opacity-50 flex items-center gap-2 px-3.5 py-3">
 						<DiAndroid size={18} />
 						<p class="text-sm">Android</p>
 					</a>
