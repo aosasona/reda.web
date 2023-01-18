@@ -2,6 +2,24 @@
 import Layout from "../../layouts/Layout.astro";
 
 const releases = await Astro.glob("./notes/*.md");
+
+const sortedReleases = releases.sort((a, b) => {
+	const aVersionParts = a.frontmatter.meta.split(".");
+	const bVersionParts = b.frontmatter.meta.split(".");
+
+	for (let i = 0; i < aVersionParts.length; i++) {
+		const aPart = parseInt(aVersionParts[i]);
+		const bPart = parseInt(bVersionParts[i]);
+
+		if (aPart > bPart) {
+			return -1;
+		} else if (aPart < bPart) {
+			return 1;
+		}
+	}
+
+	return 0;
+});
 ---
 
 <Layout title="Release notes">
@@ -10,7 +28,7 @@ const releases = await Astro.glob("./notes/*.md");
 		<p class="text-neutral-500 mt-3">Here you can find the release notes for all major versions of Reda. The release notes are ordered by version number, newest first.</p>
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-6">
 			{
-				releases.map((release) => (
+				sortedReleases.map((release) => (
 					<div class="bg-neutral-900 bg-opacity-50 rounded-lg px-5 py-4 lg:px-6 lg:py-5">
 						<h2 class="text-2xl font-bold">{release.frontmatter.meta}</h2>
 						<div class="text-neutral-500 leading-loose text-sm mt-2 mb-3">

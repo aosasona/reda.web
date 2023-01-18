@@ -1,6 +1,6 @@
 ---
 import GeneralFooter from "../components/GeneralFooter.astro";
-import GeneralNav from "../components/GeneralNav.astro";
+import GeneralNav from "../components/GeneralNav.jsx";
 import SubscriptionArea from "../components/SubscriptionArea.astro";
 
 export interface Props {
@@ -12,9 +12,7 @@ export interface Props {
 let { title, description, meta_image } = Astro.props;
 
 if (!title) title = "Reda — The way to own your library";
-if (!description)
-	description =
-		"Import, share, organise and read your favourite books, articles and documents anytime with Reda.";
+if (!description) description = "Import, share, organise and read your favourite books, articles and documents anytime with Reda.";
 if (!meta_image) meta_image = "/meta.jpg";
 
 meta_image = `https://www.usereda.app${meta_image}`;
@@ -32,10 +30,7 @@ meta_image = `https://www.usereda.app${meta_image}`;
 		<meta name="title" content={title} />
 		<meta name="color-scheme" content="dark" />
 		<meta name="theme-color" content="#000000" />
-		<meta
-			name="apple-mobile-web-app-status-bar-style"
-			content="black-translucent"
-		/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="description" content={description} />
 
 		<!-- Open Graph / Facebook -->
@@ -69,29 +64,18 @@ meta_image = `https://www.usereda.app${meta_image}`;
 		<!-- End Google Tag Manager -->
 		<meta name="Cache-Control" content="no-cache" />
 
-		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
 		<title>{title}</title>
 	</head>
 	<body class="antialiased">
 		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-MPGZG82"
-				height="0"
-				width="0"
-				style="display:none;visibility:hidden"></iframe>
-		</noscript>
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPGZG82" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-		<GeneralNav />
-		<main class="mt-[13vh] mb-6">
+
+		<GeneralNav client:load />
+		<main class="mt-[14vh] mb-6">
 			<slot />
 			<!-- <SubscriptionArea /> -->
 		</main>
