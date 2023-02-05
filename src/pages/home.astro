@@ -1,0 +1,30 @@
+---
+import FeatureCard from "../components/FeatureCard.astro";
+import BriefStory from "../components/BriefStory.jsx";
+import HeroSection from "../components/HeroSection.jsx";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+	<HeroSection client:load />
+
+	<section class="container max-w-5xl xl:max-w-7xl mx-auto flex flex-col gap-6 py-5 px-4 lg:px-0 transition-all">
+		<BriefStory client:load />
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+			<FeatureCard title="Easy organisation" icon="🗄️">Organise your books and documents in a way that makes sense to you. Create custom collections, and organise your documents into them. You can also create bookmarks to keep track of important sections of your documents.</FeatureCard>
+
+			<FeatureCard title="Import from multiple sources" icon="🔌">Import from your local file system, web URLs or even connect with your cloud storage provider to import your documents.</FeatureCard>
+
+			<FeatureCard title="Secure by default" icon="🔐">Your books and documents are stored locally on your device, and are never sent to any server unless you choose to. You can also choose to use biometrics authentication methods to keep your data safe.</FeatureCard>
+
+			<FeatureCard title="Read later" icon="📋">Save any article or web page to read later. Reda will automatically extract the article's content and save it to your library.</FeatureCard>
+
+			<FeatureCard title="Track progress" icon="📖">Pick up right where you left off the next time you open a document or book. Reda will remember your progress and will take you to the right page.</FeatureCard>
+
+			<FeatureCard title="Quick search" icon="🔍">Find any document in your library in a matter of seconds. Reda will search through your library and show you the results as you type.</FeatureCard>
+		</div>
+
+		<p class="bg-red-600 bg-opacity-20 text-center text-xs md:text-sm font-normal text-red-600 rounded-lg px-3 py-4">**Reda is currently in beta and most of these features may not be available at the moment and may change in the future.</p>
+	</section>
+</Layout>

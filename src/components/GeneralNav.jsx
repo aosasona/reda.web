@@ -16,14 +16,14 @@ export default function GeneralNav() {
 				<a href="/" className="p-0 m-0">
 					<img src="/logo_white.svg" className="h-5 lg:h-6" />
 				</a>
-				<div className="hidden lg:block space-x-6">
+				{/* <div className="hidden lg:block space-x-6">
 					<a href="#" className="opacity-60 cursor-not-allowed">
 						Sign in
 					</a>
 					<a href="#" className="opacity-60 cursor-not-allowed">
 						Pricing
 					</a>
-				</div>
+				</div> */}
 				<div className="lg:hidden">
 					<button className="bg-transparent text-white px-0 py-1 m-0" onClick={toggleMobileNav}>
 						<FiMenu size={20} />
@@ -38,12 +38,12 @@ export default function GeneralNav() {
 							<a href="/" className="block text-white text-xl">
 								Home
 							</a>
-							<a href="#" className="block text-white text-xl">
+							{/* <a href="#" className="block text-white text-xl">
 								Sign in
 							</a>
 							<a href="#" className="block text-white text-xl">
 								Pricing
-							</a>
+							</a> */}
 							<button className="border border-dashed border-white bg-transparent text-white rounded-full p-2 mt-16" onClick={() => setShowMobileNav(false)}>
 								<BsX size={20} />
 							</button>
