@@ -23,7 +23,7 @@ export default function HeroSection() {
 						<button onClick={toggleDownloadOptions}>Try it out now</button>
 						{showDownloadOptions && (
 							<div className="w-full absolute top-[125%] bg-neutral-900 bg-opacity-50 backdrop-blur-lg rounded-md z-[99]">
-								<a href="https://testflight.apple.com/join/ObUyBzN2" className="w-full hover:opacity-50 flex items-center gap-2 px-3.5 py-3" target="_blank" rel="noopener noreferrer">
+								<a href="https://apps.apple.com/app/reda/id1660479564" className="w-full hover:opacity-50 flex items-center gap-2 px-3.5 py-3" target="_blank" rel="noopener noreferrer">
 									<DiApple size={18} />
 									<p className="text-sm">iPhone (iOS)</p>
 								</a>
